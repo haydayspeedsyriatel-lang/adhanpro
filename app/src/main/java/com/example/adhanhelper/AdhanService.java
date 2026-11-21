@@ -1,4 +1,4 @@
-[21/11/2026 05:07 م] °•♡ رَفِيـقُ دَربِـي ♡•°: package com.example.adhanhelper;
+package com.example.adhanhelper;
 
 import android.app.AlarmManager;
 import android.app.Notification;
@@ -102,7 +102,7 @@ public class AdhanService extends Service {
         String path = p.getString("adhan_path", "");
         String fajr = p.getString("fajr_path", "");
         if ("Fajr".equals(key) && !fajr.isEmpty()) path = fajr;
-[21/11/2026 05:07 م] °•♡ رَفِيـقُ دَربِـي ♡•°: updateNotif("حان وقت أذان " + name);
+updateNotif("حان وقت أذان " + name);
         try {
             Intent a = new Intent(this, AdhanActivity.class).putExtra("name", name)
                     .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -188,7 +188,7 @@ public class AdhanService extends Service {
             updateNotif(msg);
             return;
         }
-[21/11/2026 05:07 م] °•♡ رَفِيـقُ دَربِـي ♡•°: String nextText = "لا مزيد من الأذان اليوم";
+String nextText = "لا مزيد من الأذان اليوم";
         long nextTime = Long.MAX_VALUE;
         for (int i = 0; i < KEYS.length; i++) {
             String s = t.optString(KEYS[i]);
